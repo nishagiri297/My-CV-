@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your Name — CSE (AI &amp; ML) Student Portfolio</title>
+
+<!--
+  HOW TO MAKE THIS YOURS:
+   1. YOUR PHOTO  -> put photo.jpg in this same folder (portrait 4:5 crop works best)
+   2. Name        -> title above, nav logo, hero, footer
+   3. Stats, certificates, hackathons, projects, achievements — copy a block to add more
+   4. Download CV -> point href to your resume PDF
+   5. Email + social links at the bottom
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="cursor" id="cursor" aria-hidden="true"></div>
+
+<header class="nav" id="nav">
+  <a class="logo" href="#top"><span class="logo-mark"></span>YOUR&nbsp;NAME</a>
+  <nav class="nav-links" aria-label="Primary">
+    <a href="#skills">Skills</a>
+    <a href="#certs">Certificates</a>
+    <a href="#hackathons">Hackathons</a>
+    <a href="#projects">Projects</a>
+    <a href="#achievements">Achievements</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <a class="btn-cv" href="resume.pdf" download>DOWNLOAD CV</a>
+</header>
+
+<main id="top">
+
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-kicker"><span class="dot-live"></span> 2nd year B.Tech · CSE (AI &amp; ML) · Open to internships</div>
+    <h1>
+      <span class="line"><span>I build things</span></span>
+      <span class="line"><span class="outline">that learn</span></span>
+      <span class="line"><span>from <em>data.</em></span></span>
+    </h1>
+    <p class="hero-blurb">Second-year Computer Science student specialising in AI and machine learning. I spend my semesters on coursework and my weekends at hackathons, turning half-formed ideas into working models before the clock runs out.</p>
+    <div class="cta-row">
+      <a class="btn btn-dark" href="#projects">See my work</a>
+      <a class="btn btn-ghost" href="#contact">Get in touch</a>
+    </div>
+  </div>
+
+  <div class="photo">
+    <img src="photo.jpg" alt="Portrait of Your Name" onerror="this.style.display='none'">
+    <div class="photo-fallback" aria-hidden="true">YN</div>
+    <span class="photo-tag">CSE · AI &amp; ML</span>
+  </div>
+</section>
+
+<div class="stats">
+  <div class="stat"><b>12+</b><small>certifications earned</small></div>
+  <div class="stat"><b>7</b><small>hackathons entered</small></div>
+  <div class="stat"><b>9</b><small>projects built</small></div>
+  <div class="stat"><b>8.6</b><small>current CGPA</small></div>
+</div>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Python <i></i> Machine Learning <i></i> Deep Learning <i></i> Data Science <i></i> Hackathons <i></i></span>
+    <span>Python <i></i> Machine Learning <i></i> Deep Learning <i></i> Data Science <i></i> Hackathons <i></i></span>
+  </div>
+</div>
+
+<section class="skills" id="skills">
+  <div class="blob" aria-hidden="true"></div>
+  <div class="sec-head reveal">
+    <h2>Skills</h2>
+    <p class="sec-note">What I've actually used on projects, not just watched a tutorial about.</p>
+  </div>
+
+  <div class="srv">
+    <button class="srv-row" aria-expanded="false"><span class="srv-title">Machine learning</span><span class="plus" aria-hidden="true"></span></button>
+    <div class="srv-panel"><div class="srv-panel-inner">
+      <p>Supervised and unsupervised models end to end — cleaning the data, picking the model, tuning it, and being honest about what the metrics mean.</p>
+      <div class="tags"><span class="tag">scikit-learn</span><span class="tag">Pandas</span><span class="tag">NumPy</span><span class="tag">Feature engineering</span></div>
+    </div></div>
+  </div>
+
+  <div class="srv">
+    <button class="srv-row" aria-expanded="false"><span class="srv-title">Deep learning</span><span class="plus"
