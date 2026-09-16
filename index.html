@@ -3,172 +3,224 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio & CV | AI & ML Specialist</title>
+  <title>Portfolio | AI & ML Developer</title>
   <link rel="stylesheet" href="style.css">
-  <!-- FontAwesome for Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-  <!-- Navigation Bar -->
+  <!-- Header / Navbar -->
   <nav class="navbar">
-    <div class="logo">PORTFOLIO<span>.</span></div>
+    <div class="logo"><i class="fa-solid fa-code"></i> CodeCraft</div>
     <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#skills">Skills</a></li>
-      <li><a href="#achievements">Achievements</a></li>
       <li><a href="#certifications">Certifications</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <a href="#contact" class="btn-primary btn-sm">Hire Me</a>
+    <a href="#contact" class="btn-purple-sm">Hire Me <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
   </nav>
 
   <!-- Hero Section -->
-  <header class="hero">
-    <div class="hero-content">
-      <span class="badge">🚀 Ready for Internship</span>
-      <h1>Hi, I'm <span class="highlight">[Your Name]</span></h1>
-      <p class="tagline">
+  <section id="home" class="hero">
+    <div class="hero-left">
+      <span class="sub-badge">AI & MACHINE LEARNING</span>
+      <h1>Hi, I'm <span class="purple-text">Your Name</span></h1>
+      <h2>I turn ideas into models.</h2>
+      <p class="hero-desc">
         Second-year Computer Science student specialising in AI and machine learning. I spend my semesters on coursework and my weekends at hackathons, turning half-formed ideas into working models before the clock runs out.
       </p>
-      <div class="hero-buttons">
-        <a href="#contact" class="btn-primary"><i class="fa-solid fa-envelope"></i> Get In Touch</a>
-        <a href="#certifications" class="btn-secondary"><i class="fa-solid fa-award"></i> View Certificates</a>
+      <div class="hero-btns">
+        <a href="#contact" class="btn-purple">View My Work <i class="fa-solid fa-arrow-right"></i></a>
+        <a href="#certifications" class="btn-outline"><i class="fa-solid fa-download"></i> Download CV</a>
+      </div>
+      <div class="tech-stack-row">
+        <span>TECHNOLOGIES I WORK WITH</span>
+        <div class="tech-icons">
+          <i class="fa-brands fa-python"></i>
+          <i class="fa-solid fa-c"></i>
+          <i class="fa-brands fa-html5"></i>
+          <i class="fa-brands fa-css3-alt"></i>
+          <i class="fa-brands fa-bootstrap"></i>
+          <i class="fa-brands fa-microsoft"></i>
+        </div>
       </div>
     </div>
-  </header>
 
-  <!-- About Section -->
+    <div class="hero-right">
+      <div class="purple-circle-bg">
+        <div class="code-card">
+          <div class="code-header">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+            <span class="code-title">&lt;/&gt; Code</span>
+          </div>
+          <pre><code><span class="keyword">const</span> developer = {
+  name: <span class="string">"Your Name"</span>,
+  focus: <span class="string">"AI & ML"</span>,
+  skills: [<span class="string">"Python"</span>, <span class="string">"C"</span>, <span class="string">"Azure"</span>, <span class="string">"PyTorch"</span>],
+  passion: <span class="string">"Building models"</span>
+};</code></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About & Stats Section -->
   <section id="about" class="section">
-    <h2 class="section-title">About Me</h2>
-    <div class="about-card">
-      <div class="about-info">
-        <h3><i class="fa-solid fa-graduation-cap"></i> Education</h3>
-        <p><strong>B.S. in Computer Science</strong> (AI & Machine Learning Specialization)</p>
-        <p>Year 2 Student | Passionate about Predictive Modeling, Computer Vision, and Deep Learning.</p>
+    <div class="about-grid">
+      <div class="about-text-box">
+        <span class="section-tag">ABOUT ME</span>
+        <h2>Ready for Internship & Machine Learning Challenges</h2>
+        <p>I am actively seeking AI/ML internships. I focus on developing full-stack applications, fine-tuning machine learning models, and building clean web interfaces.</p>
+        <a href="#contact" class="btn-outline-sm">Learn More About Me <i class="fa-solid fa-user"></i></a>
       </div>
-      <div class="about-info">
-        <h3><i class="fa-solid fa-laptop-code"></i> Hackathons & Coding</h3>
-        <p>Active hackathon participant focusing on prototyping rapid AI solutions, fine-tuning neural nets, and building end-to-end applications under strict time constraints.</p>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <i class="fa-solid fa-graduation-cap stat-icon"></i>
+          <div>
+            <h3>2nd Year</h3>
+            <p>Computer Science</p>
+          </div>
+        </div>
+        <div class="stat-card">
+          <i class="fa-solid fa-laptop-code stat-icon"></i>
+          <div>
+            <h3>10+</h3>
+            <p>Projects Built</p>
+          </div>
+        </div>
+        <div class="stat-card">
+          <i class="fa-solid fa-trophy stat-icon"></i>
+          <div>
+            <h3>Hackathons</h3>
+            <p>Active Builder</p>
+          </div>
+        </div>
+        <div class="stat-card">
+          <i class="fa-solid fa-certificate stat-icon"></i>
+          <div>
+            <h3>Certified</h3>
+            <p>Azure & Python</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Technical Skills Section -->
+  <!-- Skills Bar Section -->
   <section id="skills" class="section">
-    <h2 class="section-title">Technical Skills</h2>
-    <div class="skills-grid">
-      
-      <div class="skill-category">
-        <h3><i class="fa-solid fa-brain"></i> AI & Machine Learning</h3>
-        <div class="skill-tags">
-          <span class="tag">Python</span>
-          <span class="tag">PyTorch</span>
-          <span class="tag">TensorFlow</span>
-          <span class="tag">Scikit-Learn</span>
-          <span class="tag">OpenCV</span>
-          <span class="tag">Pandas / NumPy</span>
-        </div>
-      </div>
+    <div class="center-head">
+      <span class="section-tag">MY SKILLS</span>
+      <h2>Technologies I Master</h2>
+    </div>
 
-      <div class="skill-category">
-        <h3><i class="fa-solid fa-code"></i> Software & Web</h3>
-        <div class="skill-tags">
-          <span class="tag">C / C++</span>
-          <span class="tag">HTML5</span>
-          <span class="tag">CSS3</span>
-          <span class="tag">JavaScript</span>
-          <span class="tag">Bootstrap 5</span>
-        </div>
+    <div class="skills-bars-grid">
+      <div class="skill-item">
+        <div class="skill-info"><span><i class="fa-brands fa-python"></i> Python</span> <span>90%</span></div>
+        <div class="bar-bg"><div class="bar-fill" style="width: 90%;"></div></div>
       </div>
-
-      <div class="skill-category">
-        <h3><i class="fa-solid fa-cloud"></i> Cloud & Tools</h3>
-        <div class="skill-tags">
-          <span class="tag">Microsoft Azure</span>
-          <span class="tag">Git & GitHub</span>
-          <span class="tag">VS Code</span>
-          <span class="tag">MSYS2 / GCC</span>
-          <span class="tag">Linux</span>
-        </div>
+      <div class="skill-item">
+        <div class="skill-info"><span><i class="fa-solid fa-brain"></i> PyTorch / ML</span> <span>85%</span></div>
+        <div class="bar-bg"><div class="bar-fill" style="width: 85%;"></div></div>
       </div>
-
+      <div class="skill-item">
+        <div class="skill-info"><span><i class="fa-solid fa-c"></i> C Programming</span> <span>85%</span></div>
+        <div class="bar-bg"><div class="bar-fill" style="width: 85%;"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-info"><span><i class="fa-brands fa-microsoft"></i> Azure Cloud</span> <span>80%</span></div>
+        <div class="bar-bg"><div class="bar-fill" style="width: 80%;"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-info"><span><i class="fa-brands fa-html5"></i> HTML5 & CSS3</span> <span>90%</span></div>
+        <div class="bar-bg"><div class="bar-fill" style="width: 90%;"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-info"><span><i class="fa-brands fa-bootstrap"></i> Bootstrap 5</span> <span>85%</span></div>
+        <div class="bar-bg"><div class="bar-fill" style="width: 85%;"></div></div>
+      </div>
     </div>
   </section>
 
-  <!-- Achievements Section -->
-  <section id="achievements" class="section">
-    <h2 class="section-title">Achievements & Hackathons</h2>
-    <div class="timeline">
-      
-      <div class="timeline-item">
-        <div class="timeline-icon"><i class="fa-solid fa-trophy"></i></div>
-        <div class="timeline-content">
-          <h3>1st Place - Hackathon Name</h3>
-          <span class="date">2026</span>
-          <p>Developed an AI-powered prototype under 24 hours. Built real-time inference pipeline and interactive frontend visualizer.</p>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-icon"><i class="fa-solid fa-medal"></i></div>
-        <div class="timeline-content">
-          <h3>Top Finalist - AI Innovation Challenge</h3>
-          <span class="date">2025</span>
-          <p>Created a predictive analytics model to address real-world business datasets with high accuracy.</p>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Certifications Section -->
+  <!-- Certifications & Work Section -->
   <section id="certifications" class="section">
-    <h2 class="section-title">Certifications</h2>
-    <div class="cert-grid">
+    <div class="center-head">
+      <span class="section-tag">FEATURED CERTIFICATIONS & ACHIEVEMENTS</span>
+      <h2>Verified Qualifications</h2>
+    </div>
 
-      <div class="cert-card">
-        <i class="fa-solid fa-certificate cert-icon"></i>
+    <div class="projects-grid">
+      <div class="project-card">
+        <div class="card-num">01</div>
+        <div class="card-img-placeholder">
+          <i class="fa-solid fa-cloud cert-big-icon"></i>
+        </div>
         <h3>Azure Fundamentals</h3>
-        <p>Microsoft Certified</p>
-        <a href="#" target="_blank" class="cert-link">Verify Credentials <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        <p>Microsoft Certified credential covering cloud infrastructure & administration.</p>
+        <a href="#" class="view-link">View Certificate &rarr;</a>
       </div>
 
-      <div class="cert-card">
-        <i class="fa-solid fa-certificate cert-icon"></i>
-        <h3>Machine Learning Specialization</h3>
-        <p>Coursera / DeepLearning.AI</p>
-        <a href="#" target="_blank" class="cert-link">Verify Credentials <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+      <div class="project-card">
+        <div class="card-num">02</div>
+        <div class="card-img-placeholder">
+          <i class="fa-solid fa-award cert-big-icon"></i>
+        </div>
+        <h3>Hackathon Finalist</h3>
+        <p>Rapid AI prototyping within 24-hour weekend developer competitions.</p>
+        <a href="#" class="view-link">View Project &rarr;</a>
       </div>
 
-      <div class="cert-card">
-        <i class="fa-solid fa-certificate cert-icon"></i>
+      <div class="project-card">
+        <div class="card-num">03</div>
+        <div class="card-img-placeholder">
+          <i class="fa-solid fa-code cert-big-icon"></i>
+        </div>
         <h3>Python & Data Structures</h3>
-        <p>HackerRank / Industry Certification</p>
-        <a href="#" target="_blank" class="cert-link">Verify Credentials <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Contact & Internship Call to Action -->
-  <section id="contact" class="section">
-    <div class="contact-box">
-      <h2>Let's Build Something Together!</h2>
-      <p>I am actively seeking <strong>AI/ML Internship opportunities</strong>. Feel free to reach out for positions, collaborations, or hackathon teams.</p>
-      
-      <div class="contact-links">
-        <a href="mailto:your.email@example.com" class="contact-btn"><i class="fa-solid fa-envelope"></i> Email Me</a>
-        <a href="https://linkedin.com" target="_blank" class="contact-btn"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
-        <a href="https://github.com" target="_blank" class="contact-btn"><i class="fa-brands fa-github"></i> GitHub</a>
+        <p>Verified skill badge for algorithms, lists, and logic structure.</p>
+        <a href="#" class="view-link">View Certificate &rarr;</a>
       </div>
     </div>
   </section>
 
-  <footer>
-    <p>© 2026 Designed & Built by [Your Name]. All Rights Reserved.</p>
+  <!-- Footer / Contact Section -->
+  <footer id="contact" class="footer-section">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <span class="section-tag">LET'S WORK TOGETHER</span>
+        <h2>Ready for Internship?</h2>
+        <p>I'm open to discussing AI/ML roles, hackathons, and collaborations.</p>
+        <a href="mailto:your.email@example.com" class="btn-purple-sm">Get In Touch <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+
+      <div class="footer-col quote-box">
+        <i class="fa-solid fa-quote-left quote-icon"></i>
+        <p class="quote-text">"Turns half-formed ideas into working models before the clock runs out."</p>
+        <span class="quote-author">— Weekend Hackathon Builder</span>
+      </div>
+
+      <div class="footer-col">
+        <span class="section-tag">FOLLOW ME</span>
+        <div class="social-links">
+          <a href="#"><i class="fa-brands fa-github"></i></a>
+          <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+        <div class="contact-details">
+          <p><i class="fa-solid fa-envelope"></i> your.email@example.com</p>
+          <p><i class="fa-solid fa-location-dot"></i> Available Worldwide (Remote / Onsite)</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 Developer Portfolio. All rights reserved.</p>
+      <p>Made with <i class="fa-solid fa-heart" style="color: #6366f1;"></i></p>
+    </div>
   </footer>
 
-  <script src="script.js"></script>
 </body>
 </html>
