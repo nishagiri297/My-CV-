@@ -1,22 +1,73 @@
-// Interactive UI enhancements
 document.addEventListener("DOMContentLoaded", () => {
-  // Navbar background change on scroll
-  const navbar = document.querySelector(".navbar");
   
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 50) {
-      navbar.style.boxShadow = "0 10px 30px rgba(0, 0, 0, 0.5)";
-    } else {
-      navbar.style.boxShadow = "none";
-    }
+  // 1. Smooth Scrolling for Navbar Links
+  const navLinks = document.querySelectorAll(".nav-links a, .hero-btns a, .btn-purple-sm");
+
+  navLinks.forEach(link => {
+    link.addEventListener("click", (e) => {
+      const targetId = link.getAttribute("href");
+      if (targetId.startsWith("#")) {
+        e.preventDefault();
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          targetElement.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+          });
+        }
+      }
+    });
   });
 
-  // Reveal Animations on Scroll
+  // 2. Animate Skill Bars when Section enters Viewport
+  const skillSection = document.getElementById("skills");
+  const skillBars = document.querySelectorAll(".bar-fill");
+
+  const skillObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        skillBars.forEach(bar => {
+          const width = bar.style.width;
+          bar.style.width = "0%";
+          setTimeout(() => {
+            bar.style.transition = "width 1.2s ease-in-out";
+            bar.style.width = width;
+          }, 100);
+        });
+        skillObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  if (skillSection) {
+    skillObserver.observe(skillSection);
+  }
+
+  // 3. Floating Card Code Highlight / Interactive Click Copy Effect
+  const codeCard = document.querySelector(".code-card");
+  if (codeCard) {
+    codeCard.style.cursor = "pointer";
+    codeCard.addEventListener("click", () => {
+      const codeText = codeCard.querySelector("code").innerText;
+      navigator.clipboard.writeText(codeText).then(() => {
+        const headerTitle = codeCard.querySelector(".code-title");
+        const originalText = headerTitle.innerText;
+        headerTitle.innerText = "Copied!";
+        headerTitle.style.color = "#10b981";
+        setTimeout(() => {
+          headerTitle.innerText = originalText;
+          headerTitle.style.color = "#9ca3af";
+        }, 1500);
+      });
+    });
+  }
+
+  // 4. Scroll Reveal Animations for Cards
   const observerOptions = {
-    threshold: 0.1
+    threshold: 0.15
   };
 
-  const observer = new IntersectionObserver((entries) => {
+  const cardObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.style.opacity = "1";
@@ -25,10 +76,11 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }, observerOptions);
 
-  document.querySelectorAll(".section, .cert-card, .timeline-item").forEach(el => {
+  document.querySelectorAll(".stat-card, .project-card, .skill-item").forEach(el => {
     el.style.opacity = "0";
-    el.style.transform = "translateY(30px)";
-    el.style.transition = "all 0.6s ease-out";
-    observer.observe(el);
+    el.style.transform = "translateY(25px)";
+    el.style.transition = "all 0.5s ease-out";
+    cardObserver.observe(el);
   });
+
 });
