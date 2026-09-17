@@ -1,74 +1,654 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nisha | Portfolio & AI Developer</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nisha | Portfolio</title>
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================
+       1. BASE RESETS & GLOBAL STYLES
+       ========================================== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: #080b11;
+      color: #e2e8f0;
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    .section-tag {
+      color: #6366f1;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .purple-text {
+      color: #6366f1;
+    }
+
+    .center-head {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .center-head h2 {
+      font-size: 2.5rem;
+      margin-top: 10px;
+      color: #ffffff;
+    }
+
+    .section {
+      padding: 80px 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* ==========================================
+       2. NAVBAR
+       ========================================== */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background-color: rgba(8, 11, 17, 0.9);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .logo {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 30px;
+    }
+
+    .nav-links a {
+      color: #94a3b8;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: #ffffff;
+    }
+
+    /* ==========================================
+       3. BUTTONS
+       ========================================== */
+    .btn-purple, .btn-purple-sm {
+      background-color: #6366f1;
+      color: #ffffff;
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: background-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .btn-purple-sm {
+      padding: 8px 16px;
+      font-size: 0.9rem;
+    }
+
+    .btn-purple:hover, .btn-purple-sm:hover {
+      background-color: #4f46e5;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      border: 1px solid #334155;
+      color: #ffffff;
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: border-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .btn-outline:hover {
+      border-color: #6366f1;
+      transform: translateY(-2px);
+    }
+
+    /* ==========================================
+       4. HERO SECTION
+       ========================================== */
+    .hero {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 50px;
+      padding: 80px 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+      align-items: center;
+    }
+
+    .sub-badge {
+      color: #6366f1;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .hero-left h1 {
+      font-size: 3.5rem;
+      margin: 10px 0;
+      color: #ffffff;
+    }
+
+    .hero-left h2 {
+      font-size: 2rem;
+      color: #cbd5e1;
+      margin-bottom: 20px;
+    }
+
+    .hero-desc {
+      color: #94a3b8;
+      font-size: 1.05rem;
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 40px;
+    }
+
+    .tech-stack-row span {
+      display: block;
+      font-size: 0.75rem;
+      color: #64748b;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+    }
+
+    .tech-icons {
+      display: flex;
+      gap: 20px;
+      font-size: 1.5rem;
+      color: #94a3b8;
+    }
+
+    /* Code Preview Card */
+    .purple-circle-bg {
+      position: relative;
+      background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, rgba(8, 11, 17, 0) 70%);
+      padding: 20px;
+    }
+
+    .code-card {
+      background-color: #0f172a;
+      border: 1px solid #1e293b;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .code-header {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 15px;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+
+    .dot.red { background-color: #ef4444; }
+    .dot.yellow { background-color: #f59e0b; }
+    .dot.green { background-color: #10b981; }
+
+    .code-title {
+      margin-left: auto;
+      font-size: 0.8rem;
+      color: #64748b;
+    }
+
+    pre code {
+      font-family: 'Fira Code', monospace, sans-serif;
+      font-size: 0.9rem;
+      color: #e2e8f0;
+    }
+
+    .keyword { color: #c084fc; }
+    .string { color: #34d399; }
+
+    /* ==========================================
+       5. CYBERPUNK ABOUT ME SECTION
+       ========================================== */
+    .cyber-about-section {
+      padding: 80px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #0b0f19;
+    }
+
+    .hud-card {
+      position: relative;
+      width: 100%;
+      max-width: 1100px;
+      background: rgba(8, 20, 32, 0.9);
+      border: 3px solid #00aeef;
+      border-radius: 20px;
+      padding: 50px;
+      box-shadow: 0 0 25px rgba(0, 174, 239, 0.3), inset 0 0 15px rgba(0, 174, 239, 0.15);
+      box-sizing: border-box;
+    }
+
+    .hud-corner {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      border-color: #00aeef;
+      border-style: solid;
+    }
+
+    .top-left { top: -3px; left: -3px; border-width: 4px 0 0 4px; border-top-left-radius: 16px; }
+    .top-right { top: -3px; right: -3px; border-width: 4px 4px 0 0; border-top-right-radius: 16px; }
+    .bottom-left { bottom: -3px; left: -3px; border-width: 0 0 4px 4px; border-bottom-left-radius: 16px; }
+    .bottom-right { bottom: -3px; right: -3px; border-width: 0 4px 4px 0; border-bottom-right-radius: 16px; }
+
+    .hud-grid {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .hud-profile-wrapper {
+      position: relative;
+      width: 260px;
+      height: 260px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hud-ring-outer {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border: 4px solid #00aeef;
+      border-top-color: transparent;
+      border-radius: 50%;
+      animation: spin 12s linear infinite;
+    }
+
+    .hud-ring-inner {
+      position: absolute;
+      width: 85%;
+      height: 85%;
+      border: 2px dashed #00aeef;
+      border-bottom-color: transparent;
+      border-radius: 50%;
+      animation: spin-reverse 8s linear infinite;
+    }
+
+    .hud-avatar {
+      width: 70%;
+      height: 70%;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 2px solid #00aeef;
+    }
+
+    .hud-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .binary-overlay {
+      position: absolute;
+      left: -40px;
+      display: flex;
+      flex-direction: column;
+      font-family: monospace;
+      color: #00aeef;
+      font-size: 14px;
+      opacity: 0.6;
+    }
+
+    .hud-title {
+      font-family: 'Courier New', Courier, monospace, sans-serif;
+      font-size: 2.8rem;
+      letter-spacing: 3px;
+      color: #ffffff;
+      margin-bottom: 25px;
+      text-transform: uppercase;
+      text-shadow: 0 0 8px rgba(0, 174, 239, 0.6);
+    }
+
+    .hud-text-body {
+      color: #d1d5db;
+      font-size: 1.15rem;
+      line-height: 1.8;
+    }
+
+    .hud-intro {
+      font-weight: bold;
+      font-size: 1.25rem;
+      color: #ffffff;
+      margin-bottom: 15px;
+    }
+
+    .hud-subtext {
+      margin-top: 20px;
+      color: #9ca3af;
+      font-style: italic;
+    }
+
+    .hud-accent-bar {
+      width: 100%;
+      height: 24px;
+      background: linear-gradient(90deg, #00aeef 0%, #0077b6 70%, transparent 100%);
+      margin-top: 30px;
+      clip-path: polygon(0 0, 95% 0, 100% 100%, 0% 100%);
+    }
+
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes spin-reverse {
+      from { transform: rotate(360deg); }
+      to { transform: rotate(0deg); }
+    }
+
+    /* ==========================================
+       6. ACHIEVEMENTS & CERTIFICATES SECTION
+       ========================================== */
+    .subsection-title {
+      font-size: 1.8rem;
+      color: #ffffff;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .certificates-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+    }
+
+    .certificate-card {
+      background-color: #0f172a;
+      border: 1px solid #1e293b;
+      border-radius: 12px;
+      padding: 15px;
+      text-align: center;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .certificate-card:hover {
+      transform: translateY(-5px);
+      border-color: #6366f1;
+    }
+
+    .cert-img-wrapper {
+      width: 100%;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 15px;
+      border: 1px solid #334155;
+      background-color: #1e293b;
+    }
+
+    .cert-img-wrapper img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .certificate-card h4 {
+      color: #ffffff;
+      font-size: 1.1rem;
+      margin-bottom: 5px;
+    }
+
+    .certificate-card p {
+      color: #94a3b8;
+      font-size: 0.9rem;
+    }
+
+    /* ==========================================
+       7. CONTACT & FOOTER SECTION
+       ========================================== */
+    .footer-section {
+      padding: 80px 40px 30px 40px;
+      background-color: #0b0f19;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1.2fr;
+      gap: 40px;
+      align-items: start;
+      max-width: 1200px;
+      margin: 0 auto 50px auto;
+    }
+
+    .footer-col h2 {
+      font-size: 2.2rem;
+      margin: 12px 0;
+      color: #ffffff;
+    }
+
+    .footer-col p {
+      font-size: 1.1rem;
+      color: #9ca3af;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .quote-box {
+      background-color: #0f172a;
+      border: 1px solid #1e293b;
+      padding: 30px;
+      border-radius: 12px;
+    }
+
+    .quote-icon {
+      font-size: 1.8rem;
+      color: #6366f1;
+      margin-bottom: 15px;
+      display: block;
+    }
+
+    .quote-text {
+      font-style: italic;
+      color: #e2e8f0 !important;
+      font-size: 1.15rem !important;
+    }
+
+    .quote-author {
+      color: #64748b;
+      font-size: 0.9rem;
+    }
+
+    .contact-links-list {
+      list-style: none;
+      padding: 0;
+      margin: 15px 0 0 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .contact-link-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: #d1d5db;
+      text-decoration: none;
+      font-size: 1.05rem;
+      transition: color 0.2s ease, transform 0.2s ease;
+    }
+
+    .contact-link-item i {
+      font-size: 1.2rem;
+      color: #6366f1;
+      width: 24px;
+      text-align: center;
+    }
+
+    .contact-link-item:hover {
+      color: #6366f1;
+      transform: translateX(4px);
+    }
+
+    .location-item {
+      color: #9ca3af;
+    }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-top: 25px;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #6b7280;
+      font-size: 0.95rem;
+    }
+
+    /* ==========================================
+       8. RESPONSIVE DESIGN
+       ========================================== */
+    @media (max-width: 868px) {
+      .hero, .footer-grid, .hud-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .hero-btns {
+        justify-content: center;
+      }
+
+      .tech-icons {
+        justify-content: center;
+      }
+
+      .binary-overlay {
+        display: none;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+      }
+    }
+  </style>
 </head>
 <body>
 
-  <!-- Header / Navbar -->
+  <!-- Navigation Bar -->
   <nav class="navbar">
-    <div class="logo"><i class="fa-solid fa-code"></i> CodeCraft</div>
+    <div class="logo">
+      <i class="fa-solid font-code purple-text"></i> Nisha
+    </div>
     <ul class="nav-links">
-      <li><a href="#home">Home</a></li>
       <li><a href="#about">About</a></li>
-      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#achievements">Achievements</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <a href="#contact" class="btn-purple-sm">Hire Me <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+    <a href="#contact" class="btn-purple-sm">Hire Me</a>
   </nav>
 
   <!-- Hero Section -->
-  <section id="home" class="hero">
+  <section class="hero">
     <div class="hero-left">
-      <span class="sub-badge">AI & MACHINE LEARNING</span>
+      <span class="sub-badge">WEB DEVELOPER & PROGRAMMER</span>
       <h1>Hi, I'm <span class="purple-text">Nisha</span></h1>
-      <h2>I turn ideas into models.</h2>
+      <h2>Building digital experiences with code.</h2>
       <p class="hero-desc">
-        Second-year Computer Science student specialising in AI and machine learning. I spend my semesters on coursework and my weekends at hackathons, turning half-formed ideas into working models before the clock runs out.
+        Passionate about crafting dynamic frontend designs, web applications, and writing clean, scalable code.
       </p>
       <div class="hero-btns">
-        <a href="#contact" class="btn-purple">View My Work <i class="fa-solid fa-arrow-right"></i></a>
-        <a href="#certifications" class="btn-outline"><i class="fa-solid fa-download"></i> Download CV</a>
+        <a href="#achievements" class="btn-purple">View Work <i class="fa-solid fa-arrow-right"></i></a>
+        <a href="#contact" class="btn-outline">Contact Me</a>
       </div>
       <div class="tech-stack-row">
-        <span>TECHNOLOGIES I WORK WITH</span>
+        <span>TECH STACK</span>
         <div class="tech-icons">
-          <i class="fa-brands fa-python" title="Python"></i>
-          <i class="fa-solid fa-c" title="C"></i>
-          <i class="fa-brands fa-java" title="Java"></i>
-          <i class="fa-brands fa-js" title="JavaScript"></i>
           <i class="fa-brands fa-html5" title="HTML5"></i>
           <i class="fa-brands fa-css3-alt" title="CSS3"></i>
-          <i class="fa-brands fa-microsoft" title="Azure"></i>
+          <i class="fa-brands fa-js" title="JavaScript"></i>
+          <i class="fa-brands fa-bootstrap" title="Bootstrap"></i>
+          <i class="fa-brands fa-python" title="Python"></i>
+          <i class="fa-brands fa-c" title="C Language"></i>
         </div>
       </div>
     </div>
 
-    <div class="hero-right">
-      <div class="purple-circle-bg">
-        <div class="code-card">
-          <div class="code-header">
-            <span class="dot red"></span>
-            <span class="dot yellow"></span>
-            <span class="dot green"></span>
-            <span class="code-title">&lt;/&gt; Code</span>
-          </div>
-          <pre><code><span class="keyword">const</span> developer = {
-  name: <span class="string">"Nisha"</span>,
-  focus: <span class="string">"AI & ML"</span>,
-  skills: [<span class="string">"Python"</span>, <span class="string">"C"</span>, <span class="string">"Java"</span>, <span class="string">"Azure"</span>, <span class="string">"JS/HTML/CSS"</span>],
-  passion: <span class="string">"Building models"</span>
-};</code></pre>
+    <!-- Code Display Card -->
+    <div class="purple-circle-bg">
+      <div class="code-card">
+        <div class="code-header">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+          <span class="code-title">developer.js</span>
         </div>
+        <pre><code><span class="keyword">const</span> developer = {
+  name: <span class="string">'Nisha'</span>,
+  skills: [<span class="string">'HTML'</span>, <span class="string">'CSS'</span>, <span class="string">'JS'</span>, <span class="string">'Python'</span>, <span class="string">'C'</span>],
+  hardWorker: <span class="keyword">true</span>,
+  problemSolver: <span class="keyword">true</span>
+};</code></pre>
       </div>
     </div>
   </section>
 
-  <!-- Futuristic Cyberpunk About Me Section -->
+  <!-- Cyberpunk About Section -->
   <section id="about" class="cyber-about-section">
     <div class="hud-card">
       <div class="hud-corner top-left"></div>
@@ -81,181 +661,174 @@
           <div class="hud-ring-outer"></div>
           <div class="hud-ring-inner"></div>
           <div class="hud-avatar">
-            <img src="profile.jpg" alt="Nisha Profile">
+            <img src="https://via.placeholder.com/200" alt="Nisha Profile" />
           </div>
           <div class="binary-overlay">
-            <span>01010</span>
-            <span>10011</span>
-            <span>00101</span>
+            <span>01001010</span>
+            <span>01101111</span>
+            <span>01101000</span>
+            <span>01101110</span>
           </div>
         </div>
 
         <div class="hud-content">
-          <h2 class="hud-title">ABOUT ME :</h2>
-          
+          <h2 class="hud-title">About Me</h2>
           <div class="hud-text-body">
-            <p class="hud-intro">Hello guys!! Let me introduce myself....</p>
-            <p>
-              My name is <strong>Nisha</strong>. I am a second-year Computer Science student specializing in AI and Machine Learning.
-            </p>
-            <p>
-              I spend my semesters mastering core programming and my weekends at hackathons, turning half-formed ideas into working functional models before the clock runs out.
-            </p>
-            <p class="hud-subtext">
-              I am actively seeking AI/ML internships to build clean web interfaces, work with cloud platforms, and solve complex challenges.
-            </p>
+            <p class="hud-intro">Passionate developer dedicated to learning, creating, and solving complex problems through technology.</p>
+            <p>I focus on responsive frontend web design, structured software logic, and clean code principles. Continuously expanding my skillset across modern web frameworks and core programming languages.</p>
+            <p class="hud-subtext">// Always learning. Always building.</p>
           </div>
-
           <div class="hud-accent-bar"></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Certifications & Achievements Section -->
-  <section id="certifications" class="section">
+  <!-- Achievements Section -->
+  <section id="achievements" class="section">
     <div class="center-head">
-      <span class="section-tag">FEATURED CERTIFICATIONS & ACHIEVEMENTS</span>
-      <h2>Verified Qualifications</h2>
+      <span class="section-tag">MY MILESTONES</span>
+      <h2>Achievements</h2>
     </div>
 
-    <div class="projects-grid">
-      <!-- 01: Microsoft -->
-      <div class="project-card">
-        <div class="card-num">01</div>
-        <div class="card-img-placeholder">
-          <i class="fa-brands fa-microsoft cert-big-icon"></i>
-        </div>
-        <h3>Microsoft Certification</h3>
-        <p>Verified credential covering Azure Cloud infrastructure, services, and administrative fundamentals.</p>
-        <a href="#" class="view-link">View Certificate &rarr;</a>
-      </div>
+    <div class="achievements-container">
+      <h3 class="subsection-title">Certificates</h3>
 
-      <!-- 02: SWAYAM / NPTEL -->
-      <div class="project-card">
-        <div class="card-num">02</div>
-        <div class="card-img-placeholder">
-          <i class="fa-solid fa-graduation-cap cert-big-icon"></i>
+      <div class="certificates-grid">
+        <!-- Certificate 1 -->
+        <div class="certificate-card">
+          <div class="cert-img-wrapper">
+            <!-- Replace image-src with your actual image filename or URL -->
+            <img src="cybersecurity-for-everyone.jpg" alt="Cybersecurity for Everyone Certificate" />
+          </div>
+          <h4>Cybersecurity for Everyone</h4>
+          <p>University of Maryland</p>
         </div>
-        <h3>SWAYAM / NPTEL</h3>
-        <p>Academic certification completing advanced computer science coursework and technical domain exams.</p>
-        <a href="#" class="view-link">View Certificate &rarr;</a>
-      </div>
 
-      <!-- 03: Coursera -->
-      <div class="project-card">
-        <div class="card-num">03</div>
-        <div class="card-img-placeholder">
-          <i class="fa-solid fa-book-open cert-big-icon"></i>
+        <!-- Certificate 2 -->
+        <div class="certificate-card">
+          <div class="cert-img-wrapper">
+            <!-- Replace image-src with your actual image filename or URL -->
+            <img src="writing-skills-for-engineering-leaders.jpg" alt="Writing Skills for Engineering Leaders Certificate" />
+          </div>
+          <h4>Writing Skills for Engineering Leaders</h4>
+          <p>Rice University</p>
         </div>
-        <h3>Coursera Certification</h3>
-        <p>Specialized online coursework in programming, data structures, and software concepts.</p>
-        <a href="#" class="view-link">View Certificate &rarr;</a>
-      </div>
 
-      <!-- 04: Infosys Springboard -->
-      <div class="project-card">
-        <div class="card-num">04</div>
-        <div class="card-img-placeholder">
-          <i class="fa-solid fa-laptop-code cert-big-icon"></i>
+        <!-- Certificate 3 -->
+        <div class="certificate-card">
+          <div class="cert-img-wrapper">
+            <!-- Replace image-src with your actual image filename or URL -->
+            <img src="communication-skills-for-engineers.jpg" alt="Communication Skills for Engineers Certificate" />
+          </div>
+          <h4>Communication Skills for Engineers</h4>
+          <p>Rice University</p>
         </div>
-        <h3>Infosys Springboard</h3>
-        <p>Industry-aligned training certification in core technologies and digital skills.</p>
-        <a href="#" class="view-link">View Certificate &rarr;</a>
-      </div>
 
-      <!-- 05: Hackathons -->
-      <div class="project-card">
-        <div class="card-num">05</div>
-        <div class="card-img-placeholder">
-          <i class="fa-solid fa-trophy cert-big-icon"></i>
+        <!-- Certificate 4 -->
+        <div class="certificate-card">
+          <div class="cert-img-wrapper">
+            <!-- Replace image-src with your actual image filename or URL -->
+            <img src="oral-communication-for-engineering-leaders.jpg" alt="Oral Communication for Engineering Leaders Certificate" />
+          </div>
+          <h4>Oral Communication for Engineering Leaders</h4>
+          <p>Rice University</p>
         </div>
-        <h3>Hackathon Achievement</h3>
-        <p>Recognition for rapid AI prototyping and building functional models during competitive weekend hackathons.</p>
-        <a href="#" class="view-link">View Achievement &rarr;</a>
-      </div>
-
-      <!-- 06: Communication & Writing Skills -->
-      <div class="project-card">
-        <div class="card-num">06</div>
-        <div class="card-img-placeholder">
-          <i class="fa-solid fa-pen-nib cert-big-icon"></i>
-        </div>
-        <h3>Communication & Writing Skills</h3>
-        <p>Certification in technical writing, professional communication, and creative expression.</p>
-        <a href="#" class="view-link">View Certificate &rarr;</a>
       </div>
     </div>
   </section>
 
-  <!-- Expanded Footer / Contact Section -->
+  <!-- Contact & Footer Section -->
   <footer id="contact" class="footer-section">
     <div class="footer-grid">
-      
-      <!-- Column 1: Call to Action -->
       <div class="footer-col">
-        <span class="section-tag">LET'S WORK TOGETHER</span>
-        <h2>Ready for Internship?</h2>
-        <p>I'm open to discussing AI/ML roles, hackathons, and collaborations.</p>
-        <a href="mailto:nisha@example.com" class="btn-purple-sm">
-          Get In Touch <i class="fa-solid fa-arrow-right"></i>
-        </a>
+        <span class="section-tag">GET IN TOUCH</span>
+        <h2>Let's Connect</h2>
+        <p>Feel free to reach out for collaborations, project inquiries, or networking.</p>
+        <div class="contact-links-list">
+          <a href="mailto:your-email@example.com" class="contact-link-item">
+            <i class="fa-solid fa-envelope"></i> your-email@example.com
+          </a>
+          <span class="contact-link-item location-item">
+            <i class="fa-solid fa-location-dot"></i> Available Remote / On-site
+          </span>
+        </div>
       </div>
 
-      <!-- Column 2: Quote Box -->
-      <div class="footer-col quote-box">
-        <i class="fa-solid fa-quote-left quote-icon"></i>
-        <p class="quote-text">"Turns half-formed ideas into working models before the clock runs out."</p>
-        <span class="quote-author">— Nisha</span>
-      </div>
-
-      <!-- Column 3: Direct Links & Contact Details -->
       <div class="footer-col">
-        <span class="section-tag">CONNECT WITH ME</span>
-        
-        <ul class="contact-links-list">
-          <li>
-            <a href="https://github.com/your-username" target="_blank" class="contact-link-item">
-              <i class="fa-brands fa-github"></i>
-              <span>GitHub</span>
-            </a>
-          </li>
-          <li>
-            <a href="https://linkedin.com/in/your-profile" target="_blank" class="contact-link-item">
-              <i class="fa-brands fa-linkedin"></i>
-              <span>LinkedIn</span>
-            </a>
-          </li>
-          <li>
-            <a href="mailto:nisha@example.com" class="contact-link-item">
-              <i class="fa-solid fa-envelope"></i>
-              <span>nisha@example.com</span>
-            </a>
-          </li>
-          <li>
-            <a href="tel:+1234567890" class="contact-link-item">
-              <i class="fa-solid fa-phone"></i>
-              <span>+1 (234) 567-890</span>
-            </a>
-          </li>
-          <li>
-            <div class="contact-link-item location-item">
-              <i class="fa-solid fa-location-dot"></i>
-              <span>Available Worldwide (Remote / Onsite)</span>
-            </div>
-          </li>
-        </ul>
+        <div class="quote-box">
+          <i class="fa-solid fa-quote-left quote-icon"></i>
+          <p class="quote-text">"First, solve the problem. Then, write the code."</p>
+          <span class="quote-author">- John Johnson</span>
+        </div>
       </div>
 
+      <div class="footer-col">
+        <span class="section-tag">SOCIALS</span>
+        <h2>Find Me Online</h2>
+        <div class="contact-links-list">
+          <a href="https://github.com/" target="_blank" class="contact-link-item">
+            <i class="fa-brands fa-github"></i> GitHub Profile
+          </a>
+          <a href="https://linkedin.com/" target="_blank" class="contact-link-item">
+            <i class="fa-brands fa-linkedin"></i> LinkedIn Profile
+          </a>
+        </div>
+      </div>
     </div>
 
-    <!-- Bottom Copyright -->
     <div class="footer-bottom">
-      <p>© 2026 Nisha. All rights reserved.</p>
-      <p>Made with <i class="fa-solid fa-heart" style="color: #6366f1;"></i></p>
+      <p>&copy; 2026 Nisha. All rights reserved.</p>
+      <p>Built with HTML, CSS, & JavaScript</p>
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <!-- Embedded JavaScript -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Smooth Scrolling for Navigation Links
+      const navLinks = document.querySelectorAll('a[href^="#"]');
+      
+      navLinks.forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href');
+          
+          if (targetId === '#') return;
+          
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            targetElement.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
+
+      // Active Navigation Link Highlighting
+      const sections = document.querySelectorAll('section, footer');
+      const navItems = document.querySelectorAll('.nav-links a');
+
+      window.addEventListener('scroll', () => {
+        let currentSection = '';
+
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.clientHeight;
+          if (window.pageYOffset >= (sectionTop - sectionHeight / 3)) {
+            currentSection = section.getAttribute('id');
+          }
+        });
+
+        navItems.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === `#${currentSection}`) {
+            link.classList.add('active');
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>
