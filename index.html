@@ -256,7 +256,7 @@
     .string { color: #34d399; }
 
     /* ==========================================
-       5. CYBERPUNK ABOUT ME SECTION
+       5. CYBERPUNK ABOUT ME SECTION (TEXT ONLY)
        ========================================== */
     .cyber-about-section {
       padding: 80px 20px;
@@ -291,68 +291,6 @@
     .bottom-left { bottom: -3px; left: -3px; border-width: 0 0 4px 4px; border-bottom-left-radius: 16px; }
     .bottom-right { bottom: -3px; right: -3px; border-width: 0 4px 4px 0; border-bottom-right-radius: 16px; }
 
-    .hud-grid {
-      display: grid;
-      grid-template-columns: 320px 1fr;
-      gap: 50px;
-      align-items: center;
-    }
-
-    .hud-profile-wrapper {
-      position: relative;
-      width: 260px;
-      height: 260px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .hud-ring-outer {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      border: 4px solid #00aeef;
-      border-top-color: transparent;
-      border-radius: 50%;
-      animation: spin 12s linear infinite;
-    }
-
-    .hud-ring-inner {
-      position: absolute;
-      width: 85%;
-      height: 85%;
-      border: 2px dashed #00aeef;
-      border-bottom-color: transparent;
-      border-radius: 50%;
-      animation: spin-reverse 8s linear infinite;
-    }
-
-    .hud-avatar {
-      width: 70%;
-      height: 70%;
-      border-radius: 50%;
-      overflow: hidden;
-      border: 2px solid #00aeef;
-    }
-
-    .hud-avatar img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .binary-overlay {
-      position: absolute;
-      left: -40px;
-      display: flex;
-      flex-direction: column;
-      font-family: monospace;
-      color: #00aeef;
-      font-size: 14px;
-      opacity: 0.6;
-    }
-
     .hud-title {
       font-family: 'Courier New', Courier, monospace, sans-serif;
       font-size: 2.8rem;
@@ -361,16 +299,19 @@
       margin-bottom: 25px;
       text-transform: uppercase;
       text-shadow: 0 0 8px rgba(0, 174, 239, 0.6);
+      text-align: center;
     }
 
     .hud-text-body {
       color: #d1d5db;
-      font-size: 1.05rem;
+      font-size: 1.1rem;
       line-height: 1.8;
+      max-width: 900px;
+      margin: 0 auto;
     }
 
     .hud-text-body p {
-      margin-bottom: 15px;
+      margin-bottom: 18px;
     }
 
     .hud-accent-bar {
@@ -379,16 +320,6 @@
       background: linear-gradient(90deg, #00aeef 0%, #0077b6 70%, transparent 100%);
       margin-top: 30px;
       clip-path: polygon(0 0, 95% 0, 100% 100%, 0% 100%);
-    }
-
-    @keyframes spin {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
-
-    @keyframes spin-reverse {
-      from { transform: rotate(360deg); }
-      to { transform: rotate(0deg); }
     }
 
     /* ==========================================
@@ -554,7 +485,7 @@
        8. RESPONSIVE DESIGN
        ========================================== */
     @media (max-width: 868px) {
-      .hero, .footer-grid, .hud-grid {
+      .hero, .footer-grid {
         grid-template-columns: 1fr;
         text-align: center;
       }
@@ -565,10 +496,6 @@
 
       .tech-icons {
         justify-content: center;
-      }
-
-      .binary-overlay {
-        display: none;
       }
 
       .footer-bottom {
@@ -591,7 +518,7 @@
       <li><a href="#achievements">Achievements</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <a href="#contact" class="btn-purple-sm">Hire Me</a>
+    <a href="mailto:nisha3047.beai25@chitkara.edu.in" class="btn-purple-sm">Hire Me</a>
   </nav>
 
   <!-- Hero Section -->
@@ -639,7 +566,7 @@
     </div>
   </section>
 
-  <!-- Cyberpunk About Section -->
+  <!-- About Section (Text Only) -->
   <section id="about" class="cyber-about-section">
     <div class="hud-card">
       <div class="hud-corner top-left"></div>
@@ -647,33 +574,17 @@
       <div class="hud-corner bottom-left"></div>
       <div class="hud-corner bottom-right"></div>
 
-      <div class="hud-grid">
-        <div class="hud-profile-wrapper">
-          <div class="hud-ring-outer"></div>
-          <div class="hud-ring-inner"></div>
-          <div class="hud-avatar">
-            <img src="pfpppp.jpeg" alt="Nisha Profile Picture" />
-          </div>
-          <div class="binary-overlay">
-            <span>01001010</span>
-            <span>01101111</span>
-            <span>01101000</span>
-            <span>01101110</span>
-          </div>
+      <div class="hud-content">
+        <h2 class="hud-title">About Me</h2>
+        <div class="hud-text-body">
+          <p>
+            Motivated and detail-oriented B.E. Computer Science Engineering (AI & ML) student at Chitkara University with a strong interest in Artificial Intelligence, Machine Learning, and software development. Skilled in HTML, CSS, JavaScript, and problem-solving, with hands-on experience building web-based projects and academic applications.
+          </p>
+          <p>
+            Passionate about learning emerging technologies, collaborating in diverse environments, and applying technical knowledge to develop innovative solutions. Known for adaptability, strong communication skills, and a proactive approach to continuous learning and professional growth.
+          </p>
         </div>
-
-        <div class="hud-content">
-          <h2 class="hud-title">About Me</h2>
-          <div class="hud-text-body">
-            <p>
-              Motivated and detail-oriented B.E. Computer Science Engineering (AI & ML) student at Chitkara University with a strong interest in Artificial Intelligence, Machine Learning, and software development. Skilled in HTML, CSS, JavaScript, and problem-solving, with hands-on experience building web-based projects and academic applications.
-            </p>
-            <p>
-              Passionate about learning emerging technologies, collaborating in diverse environments, and applying technical knowledge to develop innovative solutions. Known for adaptability, strong communication skills, and a proactive approach to continuous learning and professional growth.
-            </p>
-          </div>
-          <div class="hud-accent-bar"></div>
-        </div>
+        <div class="hud-accent-bar"></div>
       </div>
     </div>
   </section>
@@ -692,7 +603,7 @@
         <!-- Certificate 1 -->
         <div class="certificate-card">
           <div class="cert-img-wrapper">
-            <img src="C:\Users\Lenovo\OneDrive\Pictures\Screenshots\Screenshot 2026-09-16 101439.png" alt="Cybersecurity for Everyone Certificate" />
+            <img src="images/cert-cybersecurity.png" alt="Cybersecurity for Everyone Certificate" />
           </div>
           <h4>Cybersecurity for Everyone</h4>
           <p>University of Maryland</p>
@@ -701,7 +612,7 @@
         <!-- Certificate 2 -->
         <div class="certificate-card">
           <div class="cert-img-wrapper">
-            <img src="C:\Users\Lenovo\OneDrive\Pictures\Screenshots\Screenshot 2026-09-17 004152.png" alt="Writing Skills for Engineering Leaders Certificate" />
+            <img src="images/cert-writing.png" alt="Writing Skills for Engineering Leaders Certificate" />
           </div>
           <h4>Writing Skills for Engineering Leaders</h4>
           <p>Rice University</p>
@@ -710,7 +621,7 @@
         <!-- Certificate 3 -->
         <div class="certificate-card">
           <div class="cert-img-wrapper">
-            <img src="C:\Users\Lenovo\OneDrive\Pictures\Screenshots\Screenshot 2026-09-17 004252.png" alt="Communication Skills for Engineers Certificate" />
+            <img src="images/cert-communication.png" alt="Communication Skills for Engineers Certificate" />
           </div>
           <h4>Communication Skills for Engineers</h4>
           <p>Rice University</p>
@@ -719,7 +630,7 @@
         <!-- Certificate 4 -->
         <div class="certificate-card">
           <div class="cert-img-wrapper">
-            <img src="C:\Users\Lenovo\OneDrive\Pictures\Screenshots\Screenshot 2026-09-17 004307.png" alt="Oral Communication for Engineering Leaders Certificate" />
+            <img src="images/cert-oral.png" alt="Oral Communication for Engineering Leaders Certificate" />
           </div>
           <h4>Oral Communication for Engineering Leaders</h4>
           <p>Rice University</p>
@@ -736,8 +647,8 @@
         <h2>Let's Connect</h2>
         <p>Feel free to reach out for collaborations, project inquiries, or networking.</p>
         <div class="contact-links-list">
-          <a href="mailto:your-email@example.com" class="contact-link-item">
-            <i class="fa-solid fa-envelope"></i> your-email@example.com
+          <a href="mailto:nisha3047.beai25@chitkara.edu.in" class="contact-link-item">
+            <i class="fa-solid fa-envelope"></i> nisha3047.beai25@chitkara.edu.in
           </a>
           <span class="contact-link-item location-item">
             <i class="fa-solid fa-location-dot"></i> Available Remote / On-site
@@ -757,10 +668,10 @@
         <span class="section-tag">SOCIALS</span>
         <h2>Find Me Online</h2>
         <div class="contact-links-list">
-          <a href="https://github.com/" target="_blank" class="contact-link-item">
+          <a href="https://github.com/nishagiri297" target="_blank" class="contact-link-item">
             <i class="fa-brands fa-github"></i> GitHub Profile
           </a>
-          <a href="https://linkedin.com/" target="_blank" class="contact-link-item">
+          <a href="https://www.linkedin.com/in/nisha-7903b8386" target="_blank" class="contact-link-item">
             <i class="fa-brands fa-linkedin"></i> LinkedIn Profile
           </a>
         </div>
