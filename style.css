@@ -388,79 +388,63 @@ pre code {
 }
 
 /* ==========================================
-   6. CERTIFICATIONS & ACHIEVEMENTS SECTION
+   6. ACHIEVEMENTS & CERTIFICATES SECTION
    ========================================== */
-.projects-grid {
+.subsection-title {
+  font-size: 1.8rem;
+  color: #ffffff;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.certificates-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 30px;
 }
 
-.project-card {
+.certificate-card {
   background-color: #0f172a;
   border: 1px solid #1e293b;
   border-radius: 12px;
-  padding: 30px;
-  position: relative;
+  padding: 15px;
+  text-align: center;
   transition: transform 0.2s ease, border-color 0.2s ease;
 }
 
-.project-card:hover {
+.certificate-card:hover {
   transform: translateY(-5px);
   border-color: #6366f1;
 }
 
-.card-num {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  color: #334155;
-  font-weight: 700;
-  font-size: 1.1rem;
-}
-
-.card-img-placeholder {
-  height: 120px;
-  background-color: #1e293b;
+.cert-img-wrapper {
+  width: 100%;
   border-radius: 8px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 20px;
+  overflow: hidden;
+  margin-bottom: 15px;
+  border: 1px solid #334155;
+  background-color: #1e293b;
 }
 
-.cert-big-icon {
-  font-size: 3rem;
-  color: #6366f1;
+.cert-img-wrapper img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
-.project-card h3 {
-  font-size: 1.3rem;
+.certificate-card h4 {
   color: #ffffff;
-  margin-bottom: 10px;
+  font-size: 1.1rem;
+  margin-bottom: 5px;
 }
 
-.project-card p {
+.certificate-card p {
   color: #94a3b8;
-  font-size: 0.95rem;
-  line-height: 1.5;
-  margin-bottom: 20px;
-}
-
-.view-link {
-  color: #6366f1;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 0.95rem;
-  transition: color 0.2s ease;
-}
-
-.view-link:hover {
-  color: #818cf8;
+  font-size: 0.9rem;
 }
 
 /* ==========================================
-   7. ENLARGED CONTACT & FOOTER SECTION
+   7. CONTACT & FOOTER SECTION
    ========================================== */
 .footer-section {
   padding: 80px 40px 30px 40px;
