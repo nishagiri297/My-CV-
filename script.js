@@ -1,4 +1,3 @@
-// Ensure DOM is fully loaded before executing scripts
 document.addEventListener('DOMContentLoaded', () => {
 
   // 1. Smooth Scrolling for Navigation Links
@@ -21,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 2. Active Link Highlighting on Scroll
+  // 2. Active Navigation Link Highlighting on Scroll
   const sections = document.querySelectorAll('section, footer');
   const navItems = document.querySelectorAll('.nav-links a');
 
@@ -31,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
     sections.forEach(section => {
       const sectionTop = section.offsetTop;
       const sectionHeight = section.clientHeight;
-      if (pageYOffset >= (sectionTop - sectionHeight / 3)) {
+      if (window.pageYOffset >= (sectionTop - sectionHeight / 3)) {
         currentSection = section.getAttribute('id');
       }
     });
@@ -44,5 +43,4 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  console.log("Nisha Portfolio Scripts Loaded Successfully.");
 });
